@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <form th:action="@{/admin/addQuiz}" method="post">
+        <input type="text" name="name" placeholder="Quiz Name" required>
+        <button type="submit">Add Quiz</button>
+    </form>
+    <h2>Existing Quizzes</h2>
+    <ul>
+        <li th:each="quiz : ${quizzes}" th:text="${quiz.name}"></li>
+    </ul>
+</body>
+</html>
